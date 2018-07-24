@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Animator</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/index.css" rel="stylesheet">
+
+	
+	<!--jQuery -->
+    <script src="js/jquery.js"></script>
+	
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="font-mfizz/font-mfizz.css">
+	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'> <!--logo-->
+	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	
+</head>
+
+<body id="page-top" class="index">
+
+<div class="portfolio-modal " id="portfolioModal1">
+        <div class="modal-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Animator</h2>
+                            <p class="item-intro text-muted">CS488 OpenGL Project</p>
+							
+							<ul class="list-inline">
+                                <li>Date: April 2018</li>
+								<li>Tools: OpenGL, C++</li>
+                            </ul>
+                            <p><a class="btn btn-details" style="height:50px;" href="files/cs488-report.pdf" target="_blank">View Project Report</a></p>
+							
+                            
+                            <div class="row">
+								<div class="col-lg-6">
+                                    <p align=left>Traditionally, to create an animation, a master artist draws the keyframes while sweatshop artists draw each frame between the keyframes through inbetweening. This application allows users to create animations much easily and quickly. The user only has to set keyframes by transforming 3D models in the scene and the program will interpolate between keyframes for them. </p>
+                                    <p align=left>Similar animation software already exists, such as <a href="https://www.blender.org/features/animation/">Blender</a> and <a href="https://www.synfig.org/">Synfig</a> (2D only). However this application not only interpolates linearly between keyframes, it also simulates some properties of physics. For example, to animate a bouncing ball, the animator only has to set gravity for a model and press play. The ball will fall by itself without additional keyframes, and every time it hits the ground, it will bounce back according to elastic collisions. In existing animation software, users will have to specify keyframes for each bounce, as opposed to only needing the initial keyframe in this application.</p>
+                                    <p align=left>With this application, creating an animation would be as simple as moving objects around in real life. The keyframe interpolation will move models from one position to another, while the physics engine causes the models drop and bounce according to laws of physics.
+                                    </p>
+								</div>
+                                <div class="col-lg-6">
+									<img class="img-responsive" src="img/portfolio/ani/move.gif" alt="" border=1>
+								</div>
+							</div>
+                            
+							<div class="row">
+								<div class="col-lg-6">
+									<img class="img-responsive" src="img/portfolio/ani/edit.gif" alt="" border=1>
+								</div>
+								<div class="col-lg-6">
+                                    <h4 align=left>User Interface</h4>
+									<p align=left>The user can select a model by left clicking on it, and transform the camera or model by dragging it after choosing the Mode on the Animator Interface on the left.</p>
+                                    <p align=left>To add a new keyframe, drag the Animator Interface &gt; Time slider forward in time. Do a camera or model transformation. A new keyframe should appear on the list of keyframes in the Animator Interface.</p>
+                                    <p align=left>To play the animation, select the t=0 keyframe. Press SPACE bar. The model or camera should move based on keyframe interpolation.</p>
+                                    <p align=left>In the Model window on the right, the user can specify settings for the model, such as which laws of physics apply to the model, the color or texture, and the sound it makes.</p>
+								</div>
+							</div>
+                            
+                            <div class="row">
+								<div class="col-lg-6">
+                                    <h4 align=left>Collisions</h4>
+									<p align=left>Collision detection is optimized using bounding spheres. This broad phase algorithm checks if distance between centers &gt; sum of radiuses. If it is, then it returns false. Otherwise, it runs the narrow phase algorithm</p>
+                                    <p align=left>Narrow phase collision detection uses ray triangle intersection to checks every vertex and edge in this model to determine if ray(vertex, velocity) and ray(edge) intersect the faces of any other model.</p>
+                                    <p align=left>If collision is detected, the model will bounce back according to 3D elastic collisions. The velocity is split into the component parallel to the colliding face and the component perpendicular to it. The parallel component of velocity remains unchanged after collision. The perpendicular component of velocity follows the conservation of momentum.
+                                    </p>
+								</div>
+                                <div class="col-lg-6">
+									<img class="img-responsive" src="https://raw.githubusercontent.com/acmyu/acmyu.github.io/master/img/portfolio/ani/collision.gif" alt="" border=1>
+								</div>
+							</div>
+                            
+                            <div class="row">
+								<div class="col-lg-6">
+									<img class="img-responsive" src="img/portfolio/ani/texturemap.gif" alt="" border=1>
+								</div>
+								<div class="col-lg-6">
+                                    <h4 align=left>Texture Mapping</h4>
+									<p align=left>Texture mapping is done by mapping the pixels of an image to points on the model using the model's UV coordinates. Each vertex in the model has its own UV coordinates. The Fragment Shader interpolates the UV coordinate of the point being rendered and uses texture2D(textureMap, uv).rgb to get the color of the point based on the texture image.</p>
+                                    <img align=left src="img/portfolio/ani/train.bmp" width=100px border=1>
+								</div>
+							</div>
+                            
+                            <div class="row">
+								<div class="col-lg-6">
+                                    <h4 align=left>Reflection and Refraction Mapping</h4>
+									<p align=left>Reflection and refraction mapping are similar to texture mapping, except it gets the color based on the reflected or refracted ray to the skybox. The reflected and refracted rays are calculated in th Vertex Shader by reflecting or refracting the line from the camera to the point. The skybox texture is passed to the Fragment Shader, which gets the color of the point based on where the ray hits.</p>
+                                    
+								</div>
+                                <div class="col-lg-6">
+									<img class="img-responsive" src="img/portfolio/ani/orbs.png" alt="" border=1>
+								</div>
+							</div>
+                            
+                            <div class="row">
+                                <div class="col-lg-6">
+									<img class="img-responsive" src="img/portfolio/ani/cel.png" alt="" border=1>
+								</div>
+								<div class="col-lg-6">
+                                    <h4 align=left>Cel Shading</h4>
+									<p align=left>Cel shading gives the scene a cartoonish look. This is done in the Fragment Shader by simply snapping the RGB values of each point to an interval before outputing it. If the color is between values a and b, set it to b.</p>
+                                    
+								</div>
+							</div>
+                            
+                            <div class="row">
+								<div class="col-lg-12" align=center>
+                                    <h3>Example Animations</h3>
+									<img class="img-responsive" src="img/portfolio/ani/stairs.gif" alt="" border=1>
+                                    <img class="img-responsive" src="https://raw.githubusercontent.com/acmyu/acmyu.github.io/master/img/portfolio/ani/orbs.gif" alt="" border=1>
+								</div>
+							</div>
+							
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>-->
+	<script src="js/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/index.js"></script>
+
+</body>
+</html>
