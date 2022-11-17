@@ -63,20 +63,15 @@
 								</div>
 								<div class="col-lg-6">
                                     <h4 align=left>Image Processing</h4>
-									<p align=left>The user can select a model by left clicking on it, and transform the camera or model by dragging it after choosing the Mode on the Animator Interface on the left.</p>
-                                    <p align=left>To add a new keyframe, drag the Animator Interface &gt; Time slider forward in time. Do a camera or model transformation. A new keyframe should appear on the list of keyframes in the Animator Interface.</p>
-                                    <p align=left>To play the animation, select the t=0 keyframe. Press SPACE bar. The model or camera should move based on keyframe interpolation.</p>
-                                    <p align=left>In the Model window on the right, the user can specify settings for the model, such as which laws of physics apply to the model, the color or texture, and the sound it makes.</p>
+									<p align=left>Todo: add details</p>
+
 								</div>
 							</div>
                             
                             <div class="row">
 								<div class="col-lg-6">
                                     <h4 align=left>Contours</h4>
-									<p align=left>Collision detection is optimized using bounding spheres. This broad phase algorithm checks if distance between centers &gt; sum of radiuses. If it is, then it returns false. Otherwise, it runs the narrow phase algorithm</p>
-                                    <p align=left>Narrow phase collision detection uses ray triangle intersection to checks every vertex and edge in this model to determine if ray(vertex, velocity) and ray(edge) intersect the faces of any other model.</p>
-                                    <p align=left>If collision is detected, the model will bounce back according to 3D elastic collisions. The velocity is split into the component parallel to the colliding face and the component perpendicular to it. The parallel component of velocity remains unchanged after collision. The perpendicular component of velocity follows the conservation of momentum.
-                                    </p>
+									
 								</div>
                                 <div class="col-lg-6">
 									<img class="img-responsive" src="img/portfolio/manga/prunedContours.png" alt="" border=1>
@@ -89,7 +84,6 @@
 								</div>
 								<div class="col-lg-6">
                                     <h4 align=left>Speech Bubble Detection</h4>
-									<p align=left>Texture mapping is done by mapping the pixels of an image to points on the model using the model's UV coordinates. Each vertex in the model has its own UV coordinates. The Fragment Shader interpolates the UV coordinate of the point being rendered and uses texture2D(textureMap, uv).rgb to get the color of the point based on the texture image.</p>
                                     <img align=left src="img/portfolio/manga/bubble-7.png" width=100px border=1>
 								</div>
 							</div>
@@ -97,8 +91,6 @@
                             <div class="row">
 								<div class="col-lg-6">
                                     <h4 align=left>Furigana Removal</h4>
-									<p align=left>Reflection and refraction mapping are similar to texture mapping, except it gets the color based on the reflected or refracted ray to the skybox. The reflected and refracted rays are calculated in th Vertex Shader by reflecting or refracting the line from the camera to the point. The skybox texture is passed to the Fragment Shader, which gets the color of the point based on where the ray hits.</p>
-                                    
 								</div>
                                 <div class="col-lg-3">
 									<img class="img-responsive" src="img/portfolio/manga/bubble-contents-7.png" alt="" border=1>
@@ -114,16 +106,13 @@
 								</div>
 								<div class="col-lg-6">
                                     <h4 align=left>OCR</h4>
-									<p align=left>Cel shading gives the scene a cartoonish look. This is done in the Fragment Shader by simply snapping the RGB values of each point to an interval before outputing it. If the color is between values a and b, set it to b.</p>
-                                    
 								</div>
 							</div>
                             
                             <div class="row">
 								<div class="col-lg-6">
                                     <h4 align=left>Translation</h4>
-									<p align=left>Reflection and refraction mapping are similar to texture mapping, except it gets the color based on the reflected or refracted ray to the skybox. The reflected and refracted rays are calculated in th Vertex Shader by reflecting or refracting the line from the camera to the point. The skybox texture is passed to the Fragment Shader, which gets the color of the point based on where the ray hits.</p>
-                                    
+									                                    
 								</div>
                                 <div class="col-lg-6">
 									<img class="img-responsive" src="img/portfolio/manga/text-7.png" alt="" border=1>

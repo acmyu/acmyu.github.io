@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>R2RDump</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/index.css" rel="stylesheet">
+
+	
+	<!--jQuery -->
+    <script src="js/jquery.js"></script>
+	
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="font-mfizz/font-mfizz.css">
+	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'> <!--logo-->
+	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	
+</head>
+
+<body id="page-top" class="index">
+
+<div class="portfolio-modal " id="portfolioModal1">
+        <div class="modal-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>R2RDump</h2>
+                            <p class="item-intro text-muted">Tool for analyzing precompiled .NET executables</p>
+							
+							<ul class="list-inline">
+                                <li>Date: Spring 2018</li>
+								<li>Tools: C++, C#, Assembly</li>
+                            </ul>
+                            <p><a class="btn btn-details" style="height:50px;" href="https://github.com/acmyu/manga-ocr" target="_blank">Source Code</a> <a class="btn btn-details" style="height:50px;" href="https://acmyu.github.io/manga-ocr/" target="_blank">Try It</a></p>
+							
+                            
+                            <div class="row">
+								<div class="col-lg-12" style="text-align: left !important;">
+                                    <p align=left>Parses and outputs the contents of a ReadyToRun image</p>
+
+                                    <h4 align=left>Usage</h4>
+                                    <p>dotnet R2RDump.dll --in &lt;path to ReadyToRun image&gt;</p>
+                                    <ul>
+                                    <li>-o, --out &lt;arg&gt;
+                                    <ul>
+                                    <li>Output file path. Dumps everything to the specified file except help message and error messages</li>
+                                    </ul>
+                                    </li>
+                                    <li>-x, --xml
+                                    <ul>
+                                    <li>Output in XML format</li>
+                                    </ul>
+                                    </li>
+                                    <li>--raw
+                                    <ul>
+                                    <li>Dump the raw bytes of each section or runtime function</li>
+                                    </ul>
+                                    </li>
+                                    <li>--header
+                                    <ul>
+                                    <li>Dump R2R header</li>
+                                    </ul>
+                                    </li>
+                                    <li>-d, --disasm
+                                    <ul>
+                                    <li>Show disassembly of methods or runtime functions</li>
+                                    </ul>
+                                    </li>
+                                    <li>-q, --query &lt;arg&gt;...
+                                    <ul>
+                                    <li>Query method by exact name, signature, row id or token</li>
+                                    </ul>
+                                    </li>
+                                    <li>-k, --keyword &lt;arg&gt;...
+                                    <ul>
+                                    <li>Search method by keyword</li>
+                                    </ul>
+                                    </li>
+                                    <li>-r, --runtimefunction &lt;arg&gt;...
+                                    <ul>
+                                    <li>Get one runtime function by id or relative virtual address</li>
+                                    </ul>
+                                    </li>
+                                    <li>-s, --section &lt;arg&gt;...
+                                    <ul>
+                                    <li>Get section by keyword</li>
+                                    </ul>
+                                    </li>
+                                    <li>--unwind
+                                    <ul>
+                                    <li>Dump unwindInfo</li>
+                                    </ul>
+                                    </li>
+                                    <li>--gc
+                                    <ul>
+                                    <li>Dump gcInfo and slot table</li>
+                                    </ul>
+                                    </li>
+                                    <li>--sc
+                                    <ul>
+                                    <li>Dump section contents</li>
+                                    </ul>
+                                    </li>
+                                    <li>-v, --verbose
+                                    <ul>
+                                    <li>Dump disassembly, unwindInfo, gcInfo and section contents</li>
+                                    </ul>
+                                    </li>
+                                    </ul>
+                                    
+                                    <h4>Architectures Supported</h4>
+                                    <h5>R2RDump Architectures</h5>
+                                    <table>
+                                    <thead>
+                                    <tr>
+                                    <th></th>
+                                    <th>x64</th>
+                                    <th>x86</th>
+                                    <th>ARM</th>
+                                    <th>ARM64</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                    <td><strong>Windows</strong></td>
+                                    <td>yes</td>
+                                    <td>no disasm</td>
+                                    <td></td>
+                                    <td></td>
+                                    </tr>
+                                    <tr>
+                                    <td><strong>Linux</strong></td>
+                                    <td>yes</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    </tr>
+                                    <tr>
+                                    <td><strong>OSX</strong></td>
+                                    <td>yes</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    </tr>
+                                    </tbody>
+                                    </table>
+                                    <h5>Input Image Architectures</h5>
+                                    <table>
+                                    <thead>
+                                    <tr>
+                                    <th></th>
+                                    <th>x64</th>
+                                    <th>x86</th>
+                                    <th>ARM</th>
+                                    <th>ARM64</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                    <td><strong>Windows</strong></td>
+                                    <td>yes</td>
+                                    <td>yes</td>
+                                    <td>no disasm</td>
+                                    <td>yes</td>
+                                    </tr>
+                                    <tr>
+                                    <td><strong>Linux</strong></td>
+                                    <td>yes</td>
+                                    <td>yes</td>
+                                    <td>no disasm</td>
+                                    <td></td>
+                                    </tr>
+                                    <tr>
+                                    <td><strong>OSX</strong></td>
+                                    <td>yes</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    </tr>
+                                    </tbody>
+                                    </table>
+                                    
+                                    <h4>ReadyToRun Format</h4>
+                                    <p><a target="_blank" rel="noopener noreferrer" href="/dotnet/runtime/blob/c5a3f49c88d3d907a56ec8d18f783426de5144e9/src/coreclr/src/tools/r2rdump/R2RFormat.png"><img src="img/portfolio/thumb/r2rdump.png" alt="R2RFormat" style="max-width: 100%;"></a></p>
+                                    <h5>System.Reflection.Metadata</h5>
+                                    <p>Used for getting method and type signatures from tokens (see: <a href="http://jilc.sourceforge.net/ecma_p2_cil.shtml" rel="nofollow">http://jilc.sourceforge.net/ecma_p2_cil.shtml</a>)</p>
+                                    <h5>READYTORUN_SECTION_COMPILER_IDENTIFIER</h5>
+                                    <p>A string describing the compiler.</p>
+                                    <p>Eg. "CoreCLR 4.5.30319.0 <strong>BUILDMACHINE</strong>"</p>
+                                    <h5>READYTORUN_SECTION_IMPORT_SECTIONS</h5>
+                                    <p>A struct described in <a href="/dotnet/runtime/blob/c5a3f49c88d3d907a56ec8d18f783426de5144e9/src/coreclr/src/inc/readytorun.h">READYTORUN_IMPORT_SECTION</a>. Currently not parsed correctly</p>
+                                    <h5>READYTORUN_SECTION_RUNTIME_FUNCTIONS</h5>
+                                    <p>A array of RVAs. For x64, each RuntimeFunction has RVAs to the start of the assembly, end of the assembly, and start of the UnwindInfo. For x86/Arm/Arm64, each RuntimeFunction has RVAs to the start of the assembly, and start of the UnwindInfo.</p>
+                                    <h5>READYTORUN_SECTION_METHODDEF_ENTRYPOINTS</h5>
+                                    <p>A <a href="/dotnet/runtime/blob/c5a3f49c88d3d907a56ec8d18f783426de5144e9/src/coreclr/src/tools/r2rdump/NativeArray.cs">NativeArray</a> used for finding the index of the entrypoint RuntimeFunction for each method. The NativeArray is index by is the rowId-1 of a method. Each element in the NativeArray is an offset pointing to the RuntimeFunction index.</p>
+                                    <h5>READYTORUN_SECTION_AVAILABLE_TYPES</h5>
+                                    <p>A <a href="/dotnet/runtime/blob/c5a3f49c88d3d907a56ec8d18f783426de5144e9/src/coreclr/src/tools/r2rdump/NativeHashtable.cs">NativeHashtable</a> mapping type hashcodes of types defined in the program to the rowIds. The hashcode is calculated with <a href="/dotnet/runtime/blob/c5a3f49c88d3d907a56ec8d18f783426de5144e9/src/coreclr/src/vm/typehashingalgorithms.h">ComputeNameHashCode</a>(namespace) ^ <a href="/dotnet/runtime/blob/c5a3f49c88d3d907a56ec8d18f783426de5144e9/src/coreclr/src/vm/typehashingalgorithms.h">ComputeNameHashCode</a>(name)</p>
+                                    <h5>READYTORUN_SECTION_ATTRIBUTEPRESENCE</h5>
+                                    <p>A <a href="/dotnet/runtime/blob/c5a3f49c88d3d907a56ec8d18f783426de5144e9/src/coreclr/src/tools/r2rdump/NativeHashtable.cs">NativeCuckooFilter</a> to discover which tokens have which "System.Runtime." prefixed attributes. The System.Runtime.CompilerServices.NullableAttribute is not used in this calculation. The filter is composed of a name hash of the type name using <a href="/dotnet/runtime/blob/c5a3f49c88d3d907a56ec8d18f783426de5144e9/src/coreclr/src/vm/typehashingalgorithms.h">ComputeNameHashCode</a>(namespace + name) hash combined with a hash of each token that produced it. In addition the upper 16 bits is used as the fingerprint in the filter.</p>
+                                    <h5>READYTORUN_SECTION_INSTANCE_METHOD_ENTRYPOINTS</h5>
+                                    <p>A <a href="/dotnet/runtime/blob/c5a3f49c88d3d907a56ec8d18f783426de5144e9/src/coreclr/src/tools/r2rdump/NativeHashtable.cs">NativeHashtable</a> mapping type hashcodes of generic instances to the (methodFlags, methodRowId, list of types, runtimeFunctionId). Each type in the list of types corresponds to a generic type in the method.</p>
+                                    <p>Eg. GenericMethod&lt;S, T&gt;(T arg1, S arg2) instantiated for &lt;int, UserDefinedStruct&gt; is in the hashtable as:</p>
+                                    <p>(hashcode) -&gt; (methodFlags) (methodRowId) (number of generic types) (Int32) (ValueType) (RowId of UserDefinedStruct) (offset to RuntimeFunctionId)</p>
+                                    <h5>UnwindInfo</h5>
+                                    <p>A struct described in <a href="/dotnet/runtime/blob/c5a3f49c88d3d907a56ec8d18f783426de5144e9/src/coreclr/src/inc/win64unwind.h">_UNWIND_INFO</a>. Each RuntimeFunction has its own UnwindInfo.</p>
+                                    <p>For x86, it contains only an encoded function length</p>
+                                    <p>For x64, Arm and Arm64, it contains a bit field followed by an array of unwind codes (<a href="/dotnet/runtime/blob/c5a3f49c88d3d907a56ec8d18f783426de5144e9/src/coreclr/src/inc/win64unwind.h">_UNWIND_CODE</a>) and finally padding to make it byte aligned</p>
+                                    <p>The unwind data info structure is used to record the effects a function has on the stack pointer and where the nonvolatile registers are saved on the stack (see <a href="https://msdn.microsoft.com/en-us/library/0kd71y96.aspx" rel="nofollow">https://msdn.microsoft.com/en-us/library/0kd71y96.aspx</a>)</p>
+                                    <h5>GcInfo</h5>
+                                    <p>Written into the ReadyToRun image right after UnwindInfo. Contains a header, GcSlots and GcTransitions (register liveness).</p>
+                                    <p>The x64/Arm/Arm64 GcInfo is written in crossgen by <a href="/dotnet/runtime/blob/c5a3f49c88d3d907a56ec8d18f783426de5144e9/src/coreclr/src/gcinfo/gcinfoencoder.cpp">GcInfoEncoder::Build</a> and decoded similar to <a href="/dotnet/runtime/blob/c5a3f49c88d3d907a56ec8d18f783426de5144e9/src/coreclr/src/vm/gcinfodecoder.cpp">GcInfoDecoder::EnumerateLiveSlots</a>. The x86 gcInfo is written by <a href="/dotnet/runtime/blob/c5a3f49c88d3d907a56ec8d18f783426de5144e9/src/coreclr/src/jit/gcencode.cpp">GCInfo::gcMakeRegPtrTable</a> and decoded similar to <a href="/dotnet/runtime/blob/c5a3f49c88d3d907a56ec8d18f783426de5144e9/src/coreclr/src/gcdump/i386/gcdumpx86.cpp">GCDump::DumpGCTable</a></p>
+                                    <p>Contains the code length followed by the header, GcSlots, and finally GcTransitions</p>
+                                    <p>The header contains flags indicating which properties are in the GcInfo. GcSlots gives details on the registers or stack pointer offsets that are used in the method. GcTransitions give the CodeOffsets (which line in the assembly code) where GcSlots (excluding untracked slots) become live or dead</p>
+                                    <p>In x64/Arm/Arm64, GcTransitions are grouped into chunks where each chunk covers NUM_NORM_CODE_OFFSETS_PER_CHUNK lines of assembly code. The following format is used:</p>
+                                    <p>Array of offsets pointing to each chunk</p>
+                                    <p>Padding to make it byte aligned</p>
+                                    <p>For each chunk:</p>
+                                    <p>1 bit indicating if it's RLE encoded</p>
+                                    <p>Array of bits indicating if each slot changed state in the chunk (ie. false if the slot is not used in the chunk). R2RDump uses this to calculate NumCouldBeLiveSlots and obtain slotIds</p>
+                                    <p>Array of bits indicating if each slot is live at the end of the chunk</p>
+                                    <p>For each slot that changed state in the chunk:</p>
+                                    <p>Array of elements consisting of a bit set to 1 and the normCodeOffsetDelta indicating all the code offsets where the slot changed state in the chunk. CodeOffset = normCodeOffsetDelta + normChunkBaseCodeOffset + currentRangeStartOffset - cumInterruptibleLength, where normChunkBaseCodeOffset is the sum of the sizes of all preceeding chunks, currentRangeStartOffset is the start offset of the interruptible range that the transition falls under and cumInterruptibleLength is the sum of the lengths of interruptible ranges that came before it</p>
+                                    
+                                    <h4>Todo</h4>
+                                    <ul>
+                                    <li>
+                                    <p>Support R2RDump on ARM and ARM64 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="557909823" data-permission-text="Title is private" data-url="https://github.com/dotnet/runtime/issues/10753" data-hovercard-type="issue" data-hovercard-url="/dotnet/runtime/issues/10753/hovercard" href="https://github.com/dotnet/runtime/issues/10753">#10753</a>)</p>
+                                    </li>
+                                    <li>
+                                    <p>Parse R2RSections: READYTORUN_SECTION_EXCEPTION_INFO, READYTORUN_SECTION_DEBUG_INFO, READYTORUN_SECTION_DELAYLOAD_METHODCALL_THUNKS, READYTORUN_SECTION_INLINING_INFO, READYTORUN_SECTION_PROFILEDATA_INFO (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="557913837" data-permission-text="Title is private" data-url="https://github.com/dotnet/runtime/issues/10948" data-hovercard-type="issue" data-hovercard-url="/dotnet/runtime/issues/10948/hovercard" href="https://github.com/dotnet/runtime/issues/10948">#10948</a>)</p>
+                                    </li>
+                                    <li>
+                                    <p>Reenable R2RDumpTests after making it less fragile</p>
+                                    </li>
+                                    <li>
+                                    <p>Fix issues with disasm on Arm (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="557914076" data-permission-text="Title is private" data-url="https://github.com/dotnet/runtime/issues/10959" data-hovercard-type="issue" data-hovercard-url="/dotnet/runtime/issues/10959/hovercard" href="https://github.com/dotnet/runtime/issues/10959">#10959</a>) and disasm using x86 coredistools (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="557913401" data-permission-text="Title is private" data-url="https://github.com/dotnet/runtime/issues/10928" data-hovercard-type="issue" data-hovercard-url="/dotnet/runtime/issues/10928/hovercard" href="https://github.com/dotnet/runtime/issues/10928">#10928</a>)</p>
+                                    </li>
+                                    <li>
+                                    <p>Test R2RDump on more test cases to make sure it runs reliably and verify that the output is accurate (list of failing inputs: <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="557914116" data-permission-text="Title is private" data-url="https://github.com/dotnet/runtime/issues/10961" data-hovercard-type="issue" data-hovercard-url="/dotnet/runtime/issues/10961/hovercard" href="https://github.com/dotnet/runtime/issues/10961">#10961</a>)</p>
+                                    </li>
+                                    </ul>
+								</div>
+							</div>
+							
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>-->
+	<script src="js/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/index.js"></script>
+
+</body>
+</html>
