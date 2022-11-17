@@ -52,7 +52,7 @@ a.active {
 }
 
 a {
-    color: #1A5276;
+    color: #2980B9;
 }
 
 a:hover,
@@ -188,22 +188,22 @@ fieldset[disabled] .btn-xl.active {
 
 .btn-details {
     padding: 15px 20px;
-    color: #aaa;
-    border-color: #aaa;
+    color: #fff;
+    border-color: #fff;
     border-radius: 3px;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
-    background-color: #fff;
+    background-color: #1A5276;
 }
 
 .btn-details:hover,
 .btn-details:focus,
 .btn-details:active{
-    color: #777;
-    border-color: #777;
-    background-color: #fff;
+    color: #fff;
+    border-color: #fff;
+    background-color: #2980B9;
 }
 
 .navbar-default {
@@ -942,6 +942,10 @@ img::selection {
 
 img::-moz-selection {
     background: 0 0;
+}
+
+.img-logo {
+    max-height: 120px;
 }
 
 body {

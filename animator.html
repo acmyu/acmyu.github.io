@@ -35,7 +35,7 @@
         <div class="modal-content">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-10 col-lg-offset-1">
+                    <div class="col-sm-10 col-sm-offset-1">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
                             <h2>Animator</h2>
@@ -49,22 +49,22 @@
 							
                             
                             <div class="row">
-								<div class="col-lg-6">
+								<div class="col-sm-6">
                                     <p align=left>Traditionally, to create an animation, a master artist draws the keyframes while assistants draw each frame between the keyframes through inbetweening. This application allows users to create animations much easily and quickly. The user only has to set keyframes by transforming 3D models in the scene and the program will interpolate between keyframes for them. </p>
                                     <p align=left>Similar animation software already exists, such as <a href="https://www.blender.org/features/animation/">Blender</a> and <a href="https://www.synfig.org/">Synfig</a> (2D only). However this application not only interpolates linearly between keyframes, it also simulates some properties of physics. For example, to animate a bouncing ball, the animator only has to set gravity for a model and press play. The ball will fall by itself without additional keyframes, and every time it hits the ground, it will bounce back according to elastic collisions. In existing animation software, users will have to specify keyframes for each bounce, as opposed to only needing the initial keyframe in this application.</p>
                                     <p align=left>With this application, creating an animation would be as simple as moving objects around in real life. The keyframe interpolation will move models from one position to another, while the physics engine causes the models drop and bounce according to laws of physics.
                                     </p>
 								</div>
-                                <div class="col-lg-6">
+                                <div class="col-sm-6">
 									<img class="img-responsive" src="img/portfolio/ani/move.gif" alt="" border=1>
 								</div>
 							</div>
                             
 							<div class="row">
-								<div class="col-lg-6">
+								<div class="col-sm-6">
 									<img class="img-responsive" src="img/portfolio/ani/edit.gif" alt="" border=1>
 								</div>
-								<div class="col-lg-6">
+								<div class="col-sm-6">
                                     <h4 align=left>User Interface</h4>
 									<p align=left>The user can select a model by left clicking on it, and transform the camera or model by dragging it after choosing the Mode on the Animator Interface on the left.</p>
                                     <p align=left>To add a new keyframe, drag the Animator Interface &gt; Time slider forward in time. Do a camera or model transformation. A new keyframe should appear on the list of keyframes in the Animator Interface.</p>
@@ -74,23 +74,23 @@
 							</div>
                             
                             <div class="row">
-								<div class="col-lg-6">
+								<div class="col-sm-6">
                                     <h4 align=left>Collisions</h4>
 									<p align=left>Collision detection is optimized using bounding spheres. This broad phase algorithm checks if distance between centers &gt; sum of radiuses. If it is, then it returns false. Otherwise, it runs the narrow phase algorithm</p>
                                     <p align=left>Narrow phase collision detection uses ray triangle intersection to checks every vertex and edge in this model to determine if ray(vertex, velocity) and ray(edge) intersect the faces of any other model.</p>
                                     <p align=left>If collision is detected, the model will bounce back according to 3D elastic collisions. The velocity is split into the component parallel to the colliding face and the component perpendicular to it. The parallel component of velocity remains unchanged after collision. The perpendicular component of velocity follows the conservation of momentum.
                                     </p>
 								</div>
-                                <div class="col-lg-6">
+                                <div class="col-sm-6">
 									<img class="img-responsive" src="https://raw.githubusercontent.com/acmyu/acmyu.github.io/master/img/portfolio/ani/collision.gif" alt="" border=1>
 								</div>
 							</div>
                             
                             <div class="row">
-								<div class="col-lg-6">
+								<div class="col-sm-6">
 									<img class="img-responsive" src="img/portfolio/ani/texturemap.gif" alt="" border=1>
 								</div>
-								<div class="col-lg-6">
+								<div class="col-sm-6">
                                     <h4 align=left>Texture Mapping</h4>
 									<p align=left>Texture mapping is done by mapping the pixels of an image to points on the model using the model's UV coordinates. Each vertex in the model has its own UV coordinates. The Fragment Shader interpolates the UV coordinate of the point being rendered and uses texture2D(textureMap, uv).rgb to get the color of the point based on the texture image.</p>
                                     <img align=left src="img/portfolio/ani/train.bmp" width=100px border=1>
@@ -98,21 +98,21 @@
 							</div>
                             
                             <div class="row">
-								<div class="col-lg-6">
+								<div class="col-sm-6">
                                     <h4 align=left>Reflection and Refraction Mapping</h4>
 									<p align=left>Reflection and refraction mapping are similar to texture mapping, except it gets the color based on the reflected or refracted ray to the skybox. The reflected and refracted rays are calculated in th Vertex Shader by reflecting or refracting the line from the camera to the point. The skybox texture is passed to the Fragment Shader, which gets the color of the point based on where the ray hits.</p>
                                     
 								</div>
-                                <div class="col-lg-6">
+                                <div class="col-sm-6">
 									<img class="img-responsive" src="img/portfolio/ani/orbs.png" alt="" border=1>
 								</div>
 							</div>
                             
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-sm-6">
 									<img class="img-responsive" src="img/portfolio/ani/cel.png" alt="" border=1>
 								</div>
-								<div class="col-lg-6">
+								<div class="col-sm-6">
                                     <h4 align=left>Cel Shading</h4>
 									<p align=left>Cel shading gives the scene a cartoonish look. This is done in the Fragment Shader by simply snapping the RGB values of each point to an interval before outputing it. If the color is between values a and b, set it to b.</p>
                                     
@@ -120,7 +120,7 @@
 							</div>
                             
                             <div class="row">
-								<div class="col-lg-12" align=center>
+								<div class="col-sm-12" align=center>
                                     <h3>Example Animations</h3>
 									<img class="img-responsive" src="img/portfolio/ani/stairs.gif" alt="" border=1>
                                     <img class="img-responsive" src="https://raw.githubusercontent.com/acmyu/acmyu.github.io/master/img/portfolio/ani/orbs.gif" alt="" border=1>
