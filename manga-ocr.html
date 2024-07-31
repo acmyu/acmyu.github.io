@@ -50,73 +50,78 @@
                             <p><a class="btn btn-details" style="height:50px;" href="https://github.com/dotnet/runtime/tree/c5a3f49c88d3d907a56ec8d18f783426de5144e9/src/coreclr/src/tools/r2rdump" target="_blank">Source Code</a> <a class="btn btn-details" style="height:50px;" href="https://acmyu.github.io/manga-ocr/" target="_blank">Try It</a></p>
 							
                             
-                            <div class="row">
-								<div class="col-sm-6">
-                                    <p align=left>This is a personal project that I worked on to automatically translate manga from Japanese to English. </p>
+              <div class="row">
+								<div class="col-sm-12">
+                    <p align=left>This is a personal project that I worked on to automatically translate manga from Japanese to English. Everything is written in JavaScript so it could be fully client-side so a server wouldn't be needed</p>
 								</div>
-                                <div class="col-sm-6">
-									<img class="img-responsive" src="img/portfolio/manga/original.png" alt="" border=1>
+							</div>
+              
+              <div class="row">
+								<div class="col-sm-12">
+                  <h4 align=left>Original Image</h4>
+									<img class="img-responsive" width="50%" src="img/portfolio/manga/original.png" alt="" border=1>
 								</div>
 							</div>
                             
 							<div class="row">
-								<div class="col-sm-6">
-									<img class="img-responsive" src="img/portfolio/manga/erosion.png" alt="" border=1>
-								</div>
-								<div class="col-sm-6">
-                                    <h4 align=left>Image Processing</h4>
-									<p align=left>Todo: add details</p>
-
+								<div class="col-sm-12">
+                  <h4 align=left>Image Processing</h4>
+                  <p align=left>Image <a href="https://docs.opencv.org/4.x/d7/d4d/tutorial_py_thresholding.html">binarization</a> and <a href="https://docs.opencv.org/3.4/db/df6/tutorial_erosion_dilatation.html">erosion</a> to reduce complexity and simplify boundaries</p>
+									<img class="img-responsive" width="50%" src="img/portfolio/manga/erosion.png" alt="" border=1>
 								</div>
 							</div>
                             
-                            <div class="row">
-								<div class="col-sm-6">
-                                    <h4 align=left>Contours</h4>
-									
-								</div>
-                                <div class="col-sm-6">
-									<img class="img-responsive" src="img/portfolio/manga/prunedContours.png" alt="" border=1>
+              <div class="row">
+								<div class="col-sm-12">
+                  <h4 align=left>Contours</h4>
+                  <p align=left>Uses <a href="https://docs.opencv.org/4.x/d4/d73/tutorial_py_contours_begin.html">OpenCV's contour detection</a></p>
+									<img class="img-responsive" width="50%" src="img/portfolio/manga/prunedContours.png" alt="" border=1>
 								</div>
 							</div>
                             
-                            <div class="row">
-								<div class="col-sm-6">
-									<img class="img-responsive" src="img/portfolio/manga/bubbleContours.png" alt="" border=1>
-								</div>
-								<div class="col-sm-6">
-                                    <h4 align=left>Speech Bubble Detection</h4>
-                                    <img align=left src="img/portfolio/manga/bubble-7.png" width=100px border=1>
+              <div class="row">
+								<div class="col-sm-12">
+                  <h4 align=left>Speech Bubble Detection</h4>
+                  <p align=left>Only keep innermost contours that are a valid size (not too big or small) and somewhat circular in shape</p>
+									<img class="img-responsive" width="50%" src="img/portfolio/manga/bubbleContours.png" alt="" border=1>
+                </div>
+							</div>
+                     
+              <div class="row">
+								<div class="col-sm-12">
+                  <h4 align=left>Speech Bubble Extraction</h4>
+                  <p align=left>Extract parts of the image inside the speech bubble contours</p>
+                  <img align=left src="img/portfolio/manga/bubble-7.png" width=100px border=1>
 								</div>
 							</div>
                             
-                            <div class="row">
-								<div class="col-sm-6">
+              <div class="row">
+								<div class="col-sm-12">
                                     <h4 align=left>Furigana Removal</h4>
+                                    <p align=left>Detect the width of a column of text by counting the number of consecutive columns where not all of the pixels in a column of pixels are white. If the text is too narrow, it's furigana. Change all the pixels in those columns to white to remove furigana.</p>
 								</div>
-                                <div class="col-sm-3">
+              </div>
+              <div class="row">
+                                <div class="col-sm-6">
 									<img class="img-responsive" src="img/portfolio/manga/bubble-contents-7.png" alt="" border=1>
 								</div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-6">
 									<img class="img-responsive" src="img/portfolio/manga/furigana-7.png" alt="" border=1>
 								</div>
 							</div>
                             
-                            <div class="row">
-                                <div class="col-sm-6">
+              <div class="row">
+                                <div class="col-sm-12">
+                  <h4 align=left>OCR</h4>
+                  <p align=left>Used <a href="https://tesseract.projectnaptha.com/">Tesseract.js</a> to extract text from the speech bubbles</p>
 									<img class="img-responsive" src="img/portfolio/manga/ocr-v-7.png" alt="" border=1>
-								</div>
-								<div class="col-sm-6">
-                                    <h4 align=left>OCR</h4>
 								</div>
 							</div>
                             
                             <div class="row">
-								<div class="col-sm-6">
+								<div class="col-sm-12">
                                     <h4 align=left>Translation</h4>
-									                                    
-								</div>
-                                <div class="col-sm-6">
+									           <p align=left>Used <a href="https://developers.deepl.com/docs">Deepl API</a> to translate the text</p>                         
 									<img class="img-responsive" src="img/portfolio/manga/text-7.png" alt="" border=1>
 								</div>
 							</div>
