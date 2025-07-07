@@ -499,8 +499,8 @@ section h4{
 }
 
 .row {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 @media(min-width:767px) {
